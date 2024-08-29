@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: 'https://petallar12.github.io', // Only allow requests from your GitHub Pages frontend
+    origin: 'https://petallar12.github.io/mib-doctors/', // Only allow requests from your GitHub Pages frontend
 }));
 app.use(bodyParser.json());
 
