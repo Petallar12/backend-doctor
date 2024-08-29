@@ -23,10 +23,15 @@ app.get('/doctors', (req, res) => {
     });
 });
 
-//extra lang to
+// Route to get all doctors
 app.get('/', (req, res) => {
-    res.status(200).json('Welcome, your app is working well');
-  });
+    const sql = 'SELECT * FROM doctor';
+    db.query(sql, (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
+});
+
 
 
 // Route to get a doctor by ID
