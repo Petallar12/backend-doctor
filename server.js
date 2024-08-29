@@ -8,13 +8,16 @@ const db = require('./db'); // Assuming you have a db.js file to handle your dat
 
 const app = express();
 
-// Enable CORS for your specific origin
 app.use(cors({
-    origin: 'https://petallar12.github.io/mib-doctors/', // Only allow requests from this origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the methods allowed
-    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
-    credentials: true, // Enable cookies and other credentials
+    origin: '*', // Allow all origins temporarily for testing purposes
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS for preflight requests
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow common headers
+    credentials: true,
 }));
+
+app.options('*', cors()); // 
+
+
 app.use(bodyParser.json());
 
 // Route to get all doctors
