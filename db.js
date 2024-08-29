@@ -1,16 +1,17 @@
 const mysql = require('mysql2');
-require('dotenv').config();
 
+// Configure the MySQL connection pool
 const db = mysql.createPool({
-    host: process.env.DB_HOST || 'localhost',
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'doctor',
+    host: "77.37.34.157",   // Replace with your Hostinger MySQL server IP
+    user: "u986804453_root",  // Replace with your Hostinger database username
+    password: "M3D1shure@!",  // Replace with your Hostinger database password
+    database: "u986804453_datalokey",  // Replace with your Hostinger database name
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
 });
 
+// Check for connection errors
 db.getConnection((err, connection) => {
     if (err) {
         console.error('Error connecting to the database:', err);
