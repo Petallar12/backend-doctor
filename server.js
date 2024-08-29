@@ -9,7 +9,9 @@ const db = require('./db'); // Assuming you have a db.js file to handle your dat
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://petallar12.github.io/mib-doctors/', // Only allow requests from your GitHub Pages frontend
+}));
 app.use(bodyParser.json());
 
 // Route to get all doctors
@@ -20,6 +22,17 @@ app.get('/doctors', (req, res) => {
         res.json(results);
     });
 });
+
+// Route to get all doctors
+app.get('/', (req, res) => {
+    const sql = 'SELECT * FROM doctor';
+    db.query(sql, (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
+});
+
+
 
 // Route to get a doctor by ID
 app.get('/doctors/:id', (req, res) => {
