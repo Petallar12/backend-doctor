@@ -9,7 +9,9 @@ const db = require('./db'); // Assuming you have a db.js file to handle your dat
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://petallar12.github.io', // Only allow requests from your GitHub Pages frontend
+}));
 app.use(bodyParser.json());
 
 // Route to get all doctors
