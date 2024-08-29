@@ -3,3 +3,5 @@ node_modules
 src.zip
 .env
 doctor-crud-frontend
+vercel-app
+
