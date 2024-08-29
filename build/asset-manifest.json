@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Doctors_MIB/static/css/main.e6c13ad2.css",
+    "main.js": "/Doctors_MIB/static/js/main.3fc7cc12.js",
+    "static/js/453.3446702e.chunk.js": "/Doctors_MIB/static/js/453.3446702e.chunk.js",
+    "index.html": "/Doctors_MIB/index.html",
+    "main.e6c13ad2.css.map": "/Doctors_MIB/static/css/main.e6c13ad2.css.map",
+    "main.3fc7cc12.js.map": "/Doctors_MIB/static/js/main.3fc7cc12.js.map",
+    "453.3446702e.chunk.js.map": "/Doctors_MIB/static/js/453.3446702e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.3fc7cc12.js"
+  ]
+}
