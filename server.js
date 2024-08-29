@@ -8,9 +8,12 @@ const db = require('./db'); // Assuming you have a db.js file to handle your dat
 
 const app = express();
 
-// Middleware
+// Enable CORS for your specific origin
 app.use(cors({
-    origin: 'https://petallar12.github.io/mib-doctors/', // Only allow requests from your GitHub Pages frontend
+    origin: 'https://petallar12.github.io/mib-doctors/', // Only allow requests from this origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the methods allowed
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+    credentials: true, // Enable cookies and other credentials
 }));
 app.use(bodyParser.json());
 
@@ -28,8 +31,7 @@ app.get('/', (req, res) => {
     const sql = 'SELECT * FROM doctor';
     db.query(sql, (err, results) => {
         if (err) throw err;
-        // res.json(results);
-        res.json({test: '1'});
+        res.json(results);
     });
 });
 
