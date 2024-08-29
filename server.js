@@ -23,6 +23,13 @@ app.get('/doctors', (req, res) => {
         }
     });
 });
+app.get('/home', (req, res) => {
+  res.status(200).json('Welcome, your app is working well');
+});
+
+app.get('/', (req, res) => {
+    res.status(200).json('Welcome, your app is working well');
+  });
 
 // Route to get a doctor by ID
 app.get('/doctors/:id', (req, res) => {
