@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 // Route to get all doctors
 app.get('/doctors', (req, res) => {
     const sql = 'SELECT * FROM doctor';
+    
     db.query(sql, (err, results) => {
         if (err) throw err;
         res.json(results);
